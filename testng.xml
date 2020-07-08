@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Smote Test Suite" parallel="tests">
+<suite name="Smote Test Suite" >
   <test name="Test all Abc behaviours">
     <classes>
       <class name="testcases.AbcTestClass"/>

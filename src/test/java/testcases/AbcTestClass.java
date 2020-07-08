@@ -1,5 +1,7 @@
 package testcases;
 
+import java.io.IOException;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -18,7 +20,7 @@ public class AbcTestClass {
 	@BeforeMethod
 	public void init() {
 		report = ReportManager.generateReport();
-//		test = report.createTest("Testing Abc");
+//		test = report.createTest("Testing Abc"); // it will keep a common name for all the test in this class.
 	}
 
 	@AfterMethod
@@ -51,6 +53,11 @@ public class AbcTestClass {
 			test.log(Status.PASS, "Assertion passed. Test passed successfully.");
 		} else
 			test.log(Status.FAIL, "Assertion failed. Test Failed");
+		try {
+			test.addScreenCaptureFromPath("D:\\errorPage.png");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 }
